@@ -48,7 +48,7 @@ const Login = () => {
         Cookies.set('token',token, {expires: 30})
        return navigate('/myprofile')
     }
-
+   
     
     return (
 
