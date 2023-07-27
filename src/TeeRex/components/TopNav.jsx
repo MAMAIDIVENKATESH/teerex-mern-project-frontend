@@ -9,6 +9,7 @@ import React,{useContext,useState,useEffect} from 'react'
 import {store} from '../../App'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import Cookies from 'js-cookie'
 
 import './style.css'
 
@@ -20,6 +21,8 @@ const TopNav = () => {
     const { state: { cart } } = CartState()
     const navigate=useNavigate()
 
+   const accessToken =  Cookies.get('token')
+
     useEffect(()=>{
        axios.get('https://teerex-mern-project-backend.vercel.app/myprofile',{
            headers:{
@@ -27,9 +30,20 @@ const TopNav = () => {
            }
        }).then(res=>setData(res.data)).catch((err)=>console.log(err))
    },[])
+   
 
-   if(!token){
-       return navigate('/login')
+   if(accessToken){
+       setToken(accessToken)
+   }else{
+    return navigate('/login')
+   }
+
+   console.log(data)
+
+   const handleLogout = () => {
+    Cookies.remove('token')
+    navigate('/login')
+
    }
 
     return (
@@ -58,7 +72,7 @@ const TopNav = () => {
                         </li>
                     </Link>
                     <Link to='/login'>
-                                <button className='btn btn-outline-primary' onClick={() => { setToken(null); } }>logout</button>
+                                <button className='btn btn-outline-primary' onClick={() => handleLogout }>logout</button>
                             </Link>
                 </ul>
             </div>

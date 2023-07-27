@@ -22,20 +22,19 @@ const Login = () => {
     }
 
 
+
     const submitHandler = e =>{
         e.preventDefault();
         const fetch=axios.post('https://teerex-mern-project-backend.vercel.app/login',data).then((res)=>{
-            Cookies.set('token', res.data.token, {expires: 30})
+         
+            Cookies.set('token',res.data.token, {expires: 30})
             setToken(res.data.token)
             alert("login successfully")
             navigate('/myprofile')
         }).catch((e)=>{
             setPasswordError(e.response.data)
         })
-       if(fetch){
-        
-       }else{
-      
+       if(!fetch){
         setPasswordError("Please enter valid email and password")
        }
      
@@ -45,9 +44,11 @@ const Login = () => {
 
     
       if (token){
-        
+        Cookies.set('token',token, {expires: 30})
        return navigate('/myprofile')
     }
+
+    
     return (
 
         <>
