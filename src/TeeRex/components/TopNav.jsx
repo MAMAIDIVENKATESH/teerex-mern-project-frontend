@@ -29,7 +29,7 @@ const TopNav = () => {
                'x-token':token
            }
        }).then(res=>setData(res.data)).catch((err)=>console.log(err))
-   },[])
+   },[token])
    
 
    if(accessToken){
@@ -38,7 +38,7 @@ const TopNav = () => {
     return navigate('/login')
    }
 
-   console.log(data)
+
 
    const handleLogout = () => {
     Cookies.remove('token')

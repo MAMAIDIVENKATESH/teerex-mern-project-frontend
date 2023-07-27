@@ -5,7 +5,6 @@ import {Routes,Route} from 'react-router-dom'
 import Register from './Register'
 import Login from './Login'
 import Myprofile from './Myprofile'
-import TopNav from './TeeRex/components/TopNav'
 import Products from './TeeRex/pages/Products';
 import Cart from './TeeRex/pages/Cart';
 import './App.css'
