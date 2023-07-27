@@ -2,6 +2,7 @@ import React,{useState,useContext} from 'react'
 import axios from 'axios';
 import {store} from './App';
 import {Link, useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie'
 
 import Nav from './Nav'
 
@@ -24,6 +25,7 @@ const Login = () => {
     const submitHandler = e =>{
         e.preventDefault();
         const fetch=axios.post('https://teerex-mern-project-backend.vercel.app/login',data).then((res)=>{
+            
             setToken(res.data.token)
             alert("login successfully")
             navigate('/myprofile')
@@ -43,6 +45,7 @@ const Login = () => {
 
     
       if (token){
+        Cookies.set('token', token, {expires: 30})
        return navigate('/myprofile')
     }
     return (
