@@ -12,11 +12,7 @@ const Home = () => {
     }
   }, [navigate, token]);
 
-  return (
-    <div>
-      <h1>Please Login</h1>
-    </div>
-  );
+ 
 };
 
 export default Home;
