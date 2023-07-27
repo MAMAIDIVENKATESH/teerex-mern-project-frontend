@@ -23,7 +23,7 @@ const Login = () => {
 
     const submitHandler = e =>{
         e.preventDefault();
-        const fetch=axios.post('http://localhost:5002/login',data).then((res)=>{
+        const fetch=axios.post('https://teerex-mern-project-backend.vercel.app/login',data).then((res)=>{
             setToken(res.data.token)
             alert("login successfully")
             navigate('/myprofile')

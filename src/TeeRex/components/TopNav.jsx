@@ -21,7 +21,7 @@ const TopNav = () => {
     const navigate=useNavigate()
 
     useEffect(()=>{
-       axios.get('http://localhost:5002/myprofile',{
+       axios.get('https://teerex-mern-project-backend.vercel.app/myprofile',{
            headers:{
                'x-token':token
            }
