@@ -27,7 +27,7 @@ const Register = () => {
             
             setPasswordError('Password Not Matched')
         }else{
-           await axios.post('https://teerex-mern-project-backend.vercel.app/register',data).then((res) => {
+           await axios.post('https://backend-lae3.onrender.com/register',data).then((res) => {
                 alert(res.data)
                 navigate('/login')
                

@@ -25,7 +25,7 @@ const Login = () => {
 
     const submitHandler = e =>{
         e.preventDefault();
-        const fetch=axios.post('https://teerex-mern-project-backend.vercel.app/login',data).then((res)=>{
+        const fetch=axios.post('https://backend-lae3.onrender.com/login',data).then((res)=>{
          
             Cookies.set('token',res.data.token, {expires: '30d'})
             setToken(res.data.token)

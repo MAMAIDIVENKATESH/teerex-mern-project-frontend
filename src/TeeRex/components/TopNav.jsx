@@ -24,7 +24,7 @@ const TopNav = () => {
    const accessToken =  Cookies.get('token')
 
     useEffect(()=>{
-       axios.get('https://teerex-mern-project-backend.vercel.app/myprofile',{
+       axios.get('https://backend-lae3.onrender.com/myprofile',{
            headers:{
                'x-token':token
            }
