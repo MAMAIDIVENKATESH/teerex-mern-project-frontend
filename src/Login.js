@@ -23,23 +23,24 @@ const Login = () => {
 
 
 
-    const submitHandler = e =>{
+    const submitHandler = async e => {
         e.preventDefault();
-        const fetch=axios.post('https://backend-lae3.onrender.com/login',data).then((res)=>{
-         
-            Cookies.set('token',res.data.token, {expires: '30d'})
-            setToken(res.data.token)
-            alert("login successfully")
-            navigate('/myprofile')
-        }).catch((e)=>{
-            setPasswordError(e.res.data)
-        })
-       if(!fetch){
-        setPasswordError("Please enter valid email and password")
-       }
-     
-        
+        try {
+          const res = await axios.post('https://teerex-mern-project-backend.vercel.app/login', data);
+          if (res && res.data && res.data.token) {
+            // Check if response and response.data.token exist
+            Cookies.set('token', res.data.token, { expires: 30 });
+            setToken(res.data.token);
+            alert('Login successfully');
+            navigate('/myprofile');
+          } else {
+            setPasswordError('Invalid response data'); // Handle unexpected response
+          }
+        } catch (error) {
+          setPasswordError('Please enter valid email and password');
         }
+      };
+      
         
 
     
