@@ -13,20 +13,13 @@ if (!token){
 return navigate('/login')
 }
 
-const displayProductPage = () => {
-  if (token){
-    return (
-      <div>
-        <TopNav />
-        <Products />
-      </div>
-    )
-  }
-  
-}
- return(
-  <div>{displayProductPage()}</div>
- )
+console.log(token)
+  return (
+    <div>
+      <TopNav />
+      <Products />
+    </div>
+  )
 }
 
 export default Myprofile

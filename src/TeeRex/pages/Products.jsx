@@ -5,6 +5,7 @@ import { axiosGet } from '../utils/AxiosGet'
 import SideNav from '../components/SideNav'
 import { RiFilter2Line, RiSearch2Line } from 'react-icons/ri';
 import TopNav from '../components/TopNav';
+import Cookies from 'js-cookie'
 
 
 const Products = () => {

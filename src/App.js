@@ -8,6 +8,8 @@ import Myprofile from './Myprofile'
 import Products from './TeeRex/pages/Products';
 import Cart from './TeeRex/pages/Cart';
 import './App.css'
+import home from './home'
+import Home from './home'
 export const store=createContext();
 
 
@@ -22,7 +24,7 @@ const App = () => {
       <Routes>
     
        
-        <Route exact path='/' element={<Products/>}></Route>
+        <Route exact path='/' element={<Home/>}></Route>
         <Route exact path='/cart' element={<Cart />}></Route>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
