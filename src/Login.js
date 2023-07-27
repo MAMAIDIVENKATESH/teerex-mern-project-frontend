@@ -27,7 +27,7 @@ const Login = () => {
         e.preventDefault();
         const fetch=axios.post('https://teerex-mern-project-backend.vercel.app/login',data).then((res)=>{
          
-            Cookies.set('token',res.data.token, {expires: 30})
+            Cookies.set('token',res.data.token, {expires: '30d'})
             setToken(res.data.token)
             alert("login successfully")
             navigate('/myprofile')
