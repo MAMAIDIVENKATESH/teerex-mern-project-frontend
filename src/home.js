@@ -12,6 +12,7 @@ const Home = () => {
   if(!token){
     return navigate('/login')
   }
+  navigate('/login')
    })
 
   
