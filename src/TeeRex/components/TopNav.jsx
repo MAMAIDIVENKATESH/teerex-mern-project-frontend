@@ -33,8 +33,10 @@ const TopNav = () => {
 
   const handleLogout = () => {
    
-    try { 
+    try {
+       
       Cookies.remove('token');
+     setToken(null)
       navigate('/login');
       navigate(0)
     } catch (error) {
