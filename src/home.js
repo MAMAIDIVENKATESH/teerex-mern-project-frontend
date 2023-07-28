@@ -1,18 +1,28 @@
-import React, { useEffect } from 'react';
-import Cookies from 'js-cookie';
-import { useNavigate } from 'react-router-dom';
+import React from 'react'
+import Cookies from 'js-cookie'
+import { useNavigate } from 'react-router'
+import { useEffect } from 'react'
 
 const Home = () => {
-  const navigate = useNavigate();
-  const token = Cookies.get('token');
+  let navigate = useNavigate()
+
 
   useEffect(() => {
-    if (!token) {
-      navigate('/login');
-    }
-  }, [navigate, token]);
+    let token = Cookies.get('token')
+  if(!token){
+    return navigate('/login')
+  }
+   })
+
+  
 
  
-};
+  return (
+    <> 
+    </>
+  )
+}
 
-export default Home;
+export default Home
+
+
